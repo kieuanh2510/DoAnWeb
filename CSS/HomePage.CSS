@@ -1,0 +1,188 @@
+﻿body {
+}
+/* Khung chứa thumbnail */
+.thumbnail {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+}
+    /* Thumbnail */
+    .thumbnail img {
+        width: 100%;
+        height: 100%;
+        -webkit-transition-duration: 0.5s;
+    }
+        /* Hover chuột vào thumbnail */
+        .thumbnail img:hover {
+            -webkit-transform: scale(1.1);
+        }
+
+a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+    text-decoration: none
+}
+
+.checked {
+    color: orange;
+}
+
+.dropdown {
+    width: 210px;
+    (Chỉnh độ rộng button danh mục)
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    /*(chỉnh độ in bóng của của menu chi tiết);*/
+    /*border-radius:4px;*/
+}
+
+.dropdown-toggle::after {
+    content: none;
+    /*( ẩn dấu tam giác sổ ra của button danh mục)*/
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    /*(cho menu chi tiết hiển thị dạng khung bảng)*/
+}
+
+    .dropdown-content a:hover {
+        background-color: #00bfff;
+    }
+
+.dropdown-item:hover .dropdown-content {
+    display: block;
+    /*( để cho menu chi tiết hiện ra);*/
+    position: absolute;
+    /*(để cho menu chi tiết nằm không chồng lên menu danh mục);*/
+    left: 247px;
+    /*( chỉnh độ khoảng cách thanh menu chi tiết với menu danh mục);*/
+    top: 0px;
+    /*(cho menu chi tiết hiển thị ngang với chiều cao của menu danh mục);*/
+    height: 100%;
+    /*(cho menu chi tiết cao bằng menu danh mục)*/
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    width: 240px;
+    /*(Chỉnh độ rộng menu chi tiết)*/
+}
+
+.dropdown-menu1 {
+    display: block;
+    height: 490px;
+    width: 100%;
+    float: left;
+    border: 1px solid #d4cbcb;
+    background-color: white;
+}
+
+.dropdown-item1:hover .dropdown-content1 {
+    display: block;
+    /*( để cho menu chi tiết hiện ra);*/
+    position: absolute;
+    /*(để cho menu chi tiết nằm không chồng lên menu danh mục);*/
+    left: 250px;
+    /*( chỉnh độ khoảng cách thanh menu chi tiết với menu danh mục);*/
+    top: 0px;
+    /*(cho menu chi tiết hiển thị ngang với chiều cao của menu danh mục);*/
+    height: 100%;
+    /*(cho menu chi tiết cao bằng menu danh mục);*/
+    padding-top: 5%;
+    padding-left: 7%
+}
+
+.Upload iframe {
+    width: 100%;
+    height: 800px;
+}
+
+.header li.active {
+    color: #0026ff;
+}
+
+/*ka*/
+        #paidSection {
+            display: flex;
+            visibility: collapse;
+            position: absolute;
+            z-index: 2 !important; 
+            height: auto;
+            width: auto;
+            background-color: #fff;
+            top: -10px;
+            width: 300px;
+            right: 50px;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+            padding: 10px;
+        }
+
+        .primaryButton {
+            width: 250px;
+            background-color: red;
+            color: wheat;
+            border: 0px;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+            .primaryButton a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+        .sticky-top {
+            z-index: 0;
+        }
+
+        #listProduct {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .listProductItem {
+            display: flex;
+            flex-direction: row;
+        }
+
+            .listProductItem img {
+                margin-right: 10px;
+                height: 40px;
+            }
+        #countItems {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            background-color: yellow;
+            margin-left: 4px;
+        }
+        .cartProducts {
+            border: 1px solid white;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }

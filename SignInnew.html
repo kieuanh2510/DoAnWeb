@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>NewSignIn</title>
+    <!-- Import Boostrap css, js, font awesome here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .input {
+            width: 50%;
+            border-bottom-left-radius: 3px;
+            border-top-left-radius: 3px;
+            border: 1px solid;
+            border-right: #bab2b2;
+            border-color: #bab2b2;
+            height: 40px
+        }
+
+        .select {
+            width: 50%;
+            height: 40px;
+            border: 1px solid;
+            border-color: #bab2b2;
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .MaXatThuc {
+            width: 70%;
+            border-bottom-left-radius: 3px;
+            border-top-left-radius: 3px;
+            border: 1px solid;
+            border-right: #bab2b2;
+            border-color: #bab2b2;
+            height: 40px;
+        }
+
+        .GuiMaXatThuc {
+            height: 40px;
+            background-color: #ffd800;
+            border: 1px solid;
+            border-left: none;
+            border-color: #bab2b2;
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+            .GuiMaXatThuc:hover {
+                background-color: #d3b40c
+            }
+
+        .brand {
+            margin-left: 3%;
+            width: 93.6%;
+            height: 40px
+        }
+        .controlbrand1 {
+            background-color:#3B5998;
+            color:#ffffff;
+            height:40px
+        }
+        .controlbrand1:hover{
+            background-color:#04205b
+        }
+       
+        .controlbrand2 {
+            background-color:#EA4335;
+            color:#ffffff;
+            height:40px
+        }
+            .controlbrand2:hover {
+                background-color: #90190f
+            }
+        .controlbrand3 {
+            background-color:#0094ff;
+            color:#ffffff;
+            height:40px
+        }
+        .controlbrand3:hover{
+            background-color:#085083
+        }
+    </style>
+    <script type="text/javascript">
+        function LoadDate() {
+            for (var i = 1; i <= 31; i++) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(i);
+                para.appendChild(node);
+                var element = document.getElementById("day");
+                element.appendChild(para);
+            }
+            for (var i = 1; i <= 12; i++) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(i);
+                para.appendChild(node);
+                var element = document.getElementById("month");
+                element.appendChild(para);
+            }
+            for (var i = 2019; i >= 1900; i--) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(i);
+                para.appendChild(node);
+                var element = document.getElementById("year");
+                element.appendChild(para);
+            }
+        }
+    </script>
+</head>
+<body onload="LoadDate()" style="font-family:'Times New Roman'">
+    <div class="container">
+        <form class="form-horizontal">
+            //dạng theo chiều dọc xuống hàng
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email / SĐT:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="EmailSDT" placeholder="Nhập Email hoặc số điện thoại">//nhập @
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="MK">Mật khẩu:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="SDT" placeholder="Mật khẩu từ 6 đến 32 ký tự">
+                </div>
+            </div>
+            <p style="margin-left:3%">Quên mật khẩu? Nhấn vào <a href="#" style="color:#0094ff;text-decoration:none">đây</a></p>
+
+            <a href="#" style="text-decoration:none">
+                <div class="input-group mb-3 brand" >
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style="background-color:#3B5998;color:#ffffff"><i class="fa fa-facebook-f" style="width:30px"></i></span>
+                    </div>
+                    <input type="button" class="form-control controlbrand1" value="Đăng nhập bằng Facebook" >
+                </div>
+            </a>
+            <a href="#" style="text-decoration:none">
+                <div class="input-group mb-3 brand" 
+                     >
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style="background-color:#EA4335;color:#ffffff"><i class="fa fa-google-plus-g" style="width:30px"></i></span>
+                    </div>
+                    <input type="button" class="form-control controlbrand2" value="Đăng nhập bằng Google" />
+                </div>
+            </a>
+            <a href="#" style="text-decoration:none">
+                <div class="input-group mb-3 brand" 
+                     >
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style="background-color:#0094ff;color:#ffffff"><b>Zalo</b></span>
+                    </div>
+                    <input type="button" class="form-control controlbrand3" value="Đăng nhập bằng Zalo" >
+                </div>
+            </a>
+
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-warning" style="width:100%"> Tạo tài khoản</button>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

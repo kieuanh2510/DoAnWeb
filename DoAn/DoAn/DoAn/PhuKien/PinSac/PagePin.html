@@ -1,0 +1,412 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="/Script/Angular.min.js"></script>
+
+    <style type="text/css">
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        p {
+            padding-left: 5%;
+        }
+
+        a {
+            color: black;
+            text-decoration: none
+        }
+
+        .a1 {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .padding-0 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        #color a:hover {
+            color: blue;
+        }
+
+        a:hover p {
+            color: blue;
+        }
+    </style>
+    <script>
+        var urlParams = new URLSearchParams(location.search);
+        var id = urlParams.get('idproduct');
+    </script>
+    <script>
+        var app = angular.module("angularApp", [])
+        app.controller("DanhMucSanPhamController", function ($scope, $http) {
+            $http({
+                method: "GET",
+                url: "DanhMucSanPham.json"
+            }).then(
+                function mySucces(respone) {
+                    $scope. DanhMucs = respone.data;
+                },
+                function myError(respone) {
+                    $scope.dataError = respone.statusText
+                }
+            )
+        })
+    </script>
+</head>
+<body ng-app="angularApp" ng-controller="DanhMucSanPhamController" style="font-family:'Times New Roman'">
+    
+    <div style="width :100%; height :1000px">
+        <!--container_fluid là lưới trong boostrap để căn chỉnh nội dung trang phù hợp với màn hình như padding margin-->
+        <div class="container-fluid " style=" width :25%;float:left" id="color">
+            <div class="row">
+                <!-- row dùng để khai báo cho các cột khi dùng class .col thành một dòng-->
+                <div class="col-md-12 ">
+                    <div class=" card">
+                        <!-- chứa và tự động căn chỉnh nội dung của Danh mục sản phẩm-->
+                        <p>
+                            <b>DANH MỤC SẢN PHẨM</b><br />
+                            <a class=" a" href=" #"<b> {{DanhMucs.Loai}}</b></a>
+                            <ul style=" list-style-type :none ">
+                                <li>
+                                    <a class="a" href=" #"> {{DanhMucs.Loai1}}</a>
+                                    <ul style=" list-style-type :none ">
+                                        <li><a class="a" href="/DoAn/Detail.html?id=0">Pin sạc dự phòng tích hợp cổng USB </a></li>
+                                        <li><a class="a" href=" #">Pin sạc dự phòng Xiaomi</a></li>
+                                        <li><a class="a" href=" #"> Pin Sạc Dự Phòng Tích Hợp Không Dây</a></li>
+                                        <li><a class="a" href=" #">Pin sạc dự phòng Xiaomi Gen 2S</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="a" href=" #">Tai nghe</a>
+                                    <ul style=" list-style-type :none ">
+                                        <li><a class="a" href=" #">Tai nghe nhét tai Sony</a></li>
+                                        <li><a class="a" href=" #">Tai nghe chụp tai Sony</a></li>
+                                        <li><a class="a" href=" #"> Tai nghe Blutooth nhét tai Sony</a></li>
+                                        <li><a class="a" href=" #">Tai nghe Samsung Galaxy AKG S10</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="a" href=" #">Tất cả loa</a>
+                                    <ul style=" list-style-type :none ">
+                                        <li><a class="a" href=" #">Loa Vi Tính Microtek MT-120 2.0 (6W)</a></li>
+                                        <li><a class="a" href=" #">Bộ 3 Loa Máy Tính USB D205</a></li>
+                                        <li><a class="a" href=" #">  Loa Bluetooth Mini Speaker B2</a></li>
+                                        <li><a class="a" href=" #">Loa Bluetooth P88/P89 (Tặng Kèm Mic) </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #">SẢN PHẨM ĐƯỢC GIAO TỪ</a><br />
+                            <a class="a" href=" #">Trong nước(0)</a><br />
+                            <a class="a" href=" #">Nước ngoài(5)</a>
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #"> ĐÁNH GIÁ</a><br />
+                        <p>
+                            <span class="fas fa-star checked"> </span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 4 sao)
+                        </p>
+                        <p>
+                            <span class="fas fa-star checked"> </span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star  "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 3 sao)
+                        </p>
+                        <p>
+                            <span class="fas fa-star checked"> </span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 2 sao)
+                        </p>
+                        <p>
+                            <span class="fas fa-star checked  "> </span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 1 sao)
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #">THƯƠNG HIỆU</a><br />
+                            <a class="a" href=" #">SamSung</a><br />
+                            <a class="a" href=" #">Iphone</a><br />
+                            <a class="a" href=" #">Xiaomi</a><br />
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #">XUẤT SỨ THƯƠNG HIỆU</a><br />
+                            <a class="a" href=" #">Mỹ</a><br />
+                            <a class="a" href=" #">Hàn Quốc</a><br />
+                            <a class="a" href=" #">Trung Quốc</a><br />
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid " style=" width :75%;float:right;font-family :'Times New Roman'  ">
+            <div class="row ">
+                <!-- gom các khung card điện thoại thành một hàng-->
+
+                <div class="col-3 padding-0 ">
+                    <!-- col-3 dùng để gộp 3 cột của 12 cột được chia trong container-fluid thành 1 cột -->
+                    <a href="HomePage.html">
+                        <div class="card " style="height:410px;">
+                            <img class="card-img-top" src="/DoAn/PhuKien/PinSac/ImagesPin/Pin1.jpg">
+                            <div class="card-body">
+                                <p class="card-title"> Pin Sạc Dự Phòng Tích Hợp Cổng USB</p>
+                                <span class="card-text">
+                                    <!-- card-text dùng căn chỉnh nội dung chữ trong khung card-->
+                                    <span style=" color :red ">690.000<sup>₫</sup></span><span>&nbsp; -22%</span><br />
+                                    <span><del>890.000<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star"></span>
+                                        ( 500 nhận xét)
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-3 padding-0">
+                    <a href="HomePage.html">
+                        <div class="card " style="height:410px;">
+                            <img class="card-img-top" src="/DoAn/PhuKien/PinSac/ImagesPin/pin2.jpg">
+                            <div class="card-body">
+                                <p class="card-title">
+                                    Pin Sạc Dự Phòng Xaomi Mi 2C 20.000 mAh...
+                                </p>
+                                <span class="card-text">
+                                    <span style=" color :red ">428.000<sup>₫</sup></span><span>&nbsp; -26%</span><br />
+                                    <span><del>580.000<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star  "></span>
+                                        <span class="fas fa-star"></span>
+                                        ( 782 nhận xét)
+                                    </span>
+                                </span>
+
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-3 padding-0">
+                    <a href="HomePage.html">
+                        <div class="card " style="height:410px">
+                            <img class="card-img-top" src="/DoAn/PhuKien/PinSac/ImagesPin/pin3.jpg">
+                            <div class="card-body">
+                                <p class="card-title" id="">
+                                    Pin Sạc Dự Phòng Tích Hợp Không Dây...
+                                </p>
+                                <span class="card-text">
+                                    <span style=" color :red ">800.000<sup>₫</sup></span><span>&nbsp; -11%</span><br />
+                                    <span><del>900.000<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        ( 23 nhận xét)
+                                    </span>
+                                </span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-3 padding-0">
+                    <a href="HomePage.html">
+                        <div class="card padding-0" style="height:410px">
+                            <img class="card-img-top" src="/DoAn/PhuKien/PinSac/ImagesPin/pin4.jpg">
+                            <div class="card-body">
+                                <p class="card-title a">
+                                    Pin sạc Dự Phòng Xiaomi Gen 2S...
+                                </p>
+                                <span class="card-text">
+                                    <span style=" color :red ">309.000<sup>₫</sup></span><span>&nbsp; -21%</span><br />
+                                    <span><del>390.000<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        ( 954 nhận xét)
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br style="clear:both" />
+    <!--footer-->
+
+    <div style="width:100%; height :200px">
+        <div style="width:50%; float:left; margin-left:10% ">
+            <table>
+                <tr>
+                    <td>  <img src="/DoAn/Images/bantin.jpg" style="width:170px; height:120px; float:left " /></td>
+                    <td> Đăng kí nhận bản tin Semis<br />Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn</td>
+                </tr>
+            </table>
+        </div>
+        <div style="width:40%;float:right; margin-top:50px ">
+            <input type="text" class="form-control" style="width:60%; float:left " placeholder="Địa chỉ email của bạn">&nbsp;
+            <button type="button" class="btn btn-danger">Đăng kí</button>
+        </div>
+    </div>
+    <div style="width:100%; height :400px">
+        <div style="width :22%; float:left; margin-left:2%">
+            <p><b>HỖ TRỢ KHÁCH HÀNG</b></p>
+            <span style="color:palevioletred">Hotline đặt hàng:1800-6963</span><br /><span style="font-size:15px">(Miễn phí, 8-21h kể cả T7, CN)</span><br />
+            <span style="color:palevioletred">Hotline chăm sóc khách hàng: 1900-6035</span><br /><span style="font-size:15px">(1000đ/phút, 8-21h kể cả T7, CN)</span><br />
+            <span style=" font-size:15px">
+                <a href="#" class="a">Các câu hỏi thường gặp</a><br />
+                <a href="#" class="a">Gửi yêu cầu hỗ trợ</a><br />
+                <a href="#" class="a">Hướng dẫn đặt hàng</a><br />
+                <a href="#" class="a">Phương thức vận chuyển</a><br />
+                <a href="#" class=" a">Chính sách đổi trả</a><br />
+                <a href="#" class="a">Hướng dẫn mua trả góp</a><br />
+                <a href="#" class="a">Chính sách hàng nhập khẩu</a><br />
+                Hỗ trợ khách hàng :support@semis.vn<br />
+                Báo lỗi bảo mật:security@semis.vn<br />
+            </span>
+        </div>
+        <div style="width:20%; float:left">
+            <p><b>VỀ SEMIS</b></p>
+            <span style=" font-size:15px">
+                <a href="#" class="a">Giới thiệu Semis</a><br />
+                <a href="#" class="a">Tuyển dụng</a><br />
+                <a href="#" class="a">Chính sách bảo mật thanh toán</a><br />
+                <a href="#" class="a">Chính sách bảo mật thông tin cái nhân</a><br />
+                <a href="#" class="a">Chính sách giải quyết khiếu nại</a><br />
+                <a href="#" class="a">Điều khoản sử dụng</a><br />
+                <a href="#" class="a">Hội sách online</a><br />
+                <a href="#" class="a">Semis tư vấn</a><br />
+                <a href="#" class="a">Bán hàng doanh nghiệp</a><br />
+            </span>
+        </div>
+        <div style="width :20%; float:left ">
+            <p><b>HƠP TÁC VÀ LIÊN KẾT</b></p>
+            <span style="font-size:15px">
+                <a href="#" class="a">Quy chế hoạt động Sàn GDTMĐT</a><br />
+                <a href="#" class="a">Bán hàng cùng Semis</a><br />
+            </span>
+        </div>
+        <div style="width :18%; float:left ">
+            <p><b>PHƯƠNG THỨC THANH TOÁN</b></p>
+            <div class="row padding">
+                <div class="col-md-4">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" style="width:70px; height:40px" src="/DoAn/Images/visa1.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="/DoAn/Images/2hinhtron.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="/DoAn/Images/UB.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:10px">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="/DoAn/Images/cash.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:10px">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="/DoAn/Images/internetbanking.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:10px">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="/DoAn/Images/tragop.PNG" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="width:15%;float :left " align="center">
+            <p><b>KẾT NỐI VỚI CHÚNG TÔI</b></p>
+            <a href="#"><img src="/DoAn/Images/face.PNG" /></a>
+            <a href="#"><img src="/DoAn/Images/you.PNG" /></a>
+        </div>
+    </div>
+    <hr />
+    <div style="margin-left:10%; margin-right:10%; font-size:15px; height:130px">
+        <div style="width:45%; float:left; margin-right:5% ">
+            Địa chỉ văn phòng: 52 Út Tịch, phường 4, quận Tân Bình, thành phố Hồ Chí Minh<br />
+            Semis nhận đặt hàng trực tuyến và giao hàng tận nơi, chưa hỗ trợ mua và nhận hàng trực tiếp tại văn phòng hoặc trung tâm xử lý đơn hàng
+        </div>
+        <div style="width:45%; float:right; margin-left:5% ">
+            Địa chỉ gửi hàng đổi/trả/bảo hành: Trung tâm xử lý đơn hàng SEMIS - 367/F370 khu A75 Bạch Đằng, P.2, Q.Tân Bình, TP. Hồ Chí Minh<br />
+
+            (Tham khảo <a href="#" class="a1">hướng dẫn đổi, trả, bảo hành</a> hoặc liên hệ 1900-6035 để được hướng dẫn thêm)
+        </div>
+    </div>
+
+    <div style="width:100%; font-size:15px">
+        <div style="width:40%; margin-left:5%; float:left ">
+            &#169;<span><b>2019 - Bản quyền của Công Ty Cổ Phần SEMIS - Semis.vn</b></span><br />
+            <span>
+                Giấy chứng nhận Đăng ký Kinh doanh số 0309532909 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày 06/01/2010
+            </span>
+        </div>
+        <div style="width:20%; float :right ">
+            <a href="#"><img src="/DoAn/Images/bocongthuong.PNG" /></a>
+            <a href="#"><img src="/DoAn/Images/bocongthuong2.PNG" /></a>
+            <a href="#"><img src="/DoAn/Images/bocongthuong3.PNG" /></a>
+        </div>
+
+    </div>
+</body>
+</html>

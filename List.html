@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="/Angular.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="CSS/HomePage.CSS" />
+    <style type="text/css">
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        p {
+            padding-left: 5%;
+        }
+
+        a {
+            color: black;
+            text-decoration: none
+        }
+
+        .a1 {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .padding-0 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        #color a:hover {
+            color: blue;
+        }
+
+        a:hover p {
+            color: blue;
+        }
+    </style>
+    <script>
+        var urlParams = new URLSearchParams(location.search);
+        var id = urlParams.get('id');
+
+    </script>
+    <script>
+        var app = angular.module("angularApp", [])
+        app.controller("DanhMucSanPhamController", function ($scope, $http) {
+            $http({
+                method: "GET",
+                url: "DanhMucSanPham.json"
+            }).then(
+                function mySucces(respone) {
+                    $scope.DanhMucs = respone.data[0];
+                    for (var i = 0; i < respone.data.length; i++) {
+                        if (respone.data[i].ID == id) {
+                            $scope.DanhMucs = respone.data[i];
+                            return $scope.DanhMucs;
+                        }
+                    }
+                },
+                function myError(respone) {
+                    $scope.dataError = respone.statusText
+                }
+            )
+        })
+    </script>
+</head>
+<body ng-app="angularApp" ng-controller="DanhMucSanPhamController" style="font-family:'Times New Roman'">
+
+
+    <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color:#00ace6">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="color:white"> <i class="fas fa-university" style="color:orange "></i>&nbsp; Đặt khách sạn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="color:white"><i class="fas fa-plane" style="color:orange "></i>&nbsp; Đặt vé máy bay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="color:white"><i class="fas fa-fire" style="color:orange "></i>&nbsp; Khuyến mãi hot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="color:white"><i class="fas fa-globe" style="color:orange "></i>&nbsp; Hàng quốc tế</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="color:white"><i class="fas fa-dollar-sign" style="color:orange "></i>&nbsp; Bán hàng cùng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav class="  navbar-expand-md navbar-light  sticky-top" style="background-color:#00bfff;width:100%;z-index:1">
+        <nav class=" navbar navbar-expand-md navbar-light  " style="background-color:#00bfff;width:100%">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarResponsive1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarResponsive1">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                            <img src="./ImageHomepage/72747530_2761407493957804_4127823008679067648_n.jpg" style="height:40px">
+                        </li>
+                        <li class="nav-item">
+                            <div class="input-group md-form form-control-sm form-2 pl-5" style="width:600px">
+                                <input class=" form-control my-0 py-2 amber-border " type="text" placeholder="Search" aria-label="Search" />
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text amber-border lighten-3" id="basic-text1">
+                                        <i class="fas fa-search text-grey" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-map-marker-alt" style="color:orange"></i>&nbsp;Theo dõi đơn hàng của bạn</a>
+                        </li>
+                        <li class="nav-item" style=" margin-right:-50px">
+                            <a class="nav-link" href="#"><i class="fas fa-bell" style="color:orange "></i>&nbsp;Thông báo</a>
+                        </li>
+                        <li class="nav-item dropdown " style=" margin-right:-50px">
+                            <div class="dropdown" align="center">
+                                <a class="nav-link " href="#"><i class="fas fa-user" style="color:orange " id="dropdownMenu3"></i>&nbsp;Đăng nhập</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" style="width:140%">
+                                    <li class="dropdown-item"><button type="button" class="btn btn-warning" style="width:100%;margin-top:5px" data-toggle="modal" data-target="#myModal">Đăng nhập</button></li>
+                                    <li class="dropdown-item"><button class="btn btn-warning" style="width:100%;margin-top:5px; margin-bottom:0px" data-target="#myModal" data-toggle="modal">Đăng ký</button></li>
+                                    <li class="dropdown-item" style="margin-top:5px;margin-bottom:-17px">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" style="background-color:#3B5998;color:#ffffff; width:47px"><i class="fa fa-facebook-f"></i></span>
+                                            </div>
+                                            <button class="form-control" style="background-color:#3B5998;color:#ffffff">Đăng nhập bằng Facebook</button>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item" style="margin-top:5px; margin-bottom:0px;margin-bottom:-17px">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" style="background-color:#EA4335;color:#ffffff; width:47px"><i class="fa fa-google-plus-g"></i></span>
+                                            </div>
+                                            <button class="form-control" style="background-color:#EA4335;color:#ffffff">Đăng nhập bằng Google</button>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item" style="margin-top:5px; margin-bottom:-15px">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" style="background-color:#0094ff;color:#ffffff; width:47px"><b>Zalo</b></span>
+                                            </div>
+                                            <button class="form-control" style="background-color:#0094ff;color:#ffffff">Đăng nhập bằng Zalo</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item" onmouseover="showCart()" onmouseout="hideCart()"> <a class="nav-link cartProducts" href="#"><i class="fas fa-cart-plus" style="color:orange "></i> &nbsp;Giỏ hàng<div id="countItems">0</div></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar nav-item navbar-expand-md navbar-light  " style="background-color:#00bfff;display:flex;justify-content:flex-end">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class=" collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button style="background-color: #189EFF; border-width: 0px" class="btn btn-secondary " type="button" id="dropdownMenu2">
+                                    <!--btn dùng để border cho button đẹp hơn để phù hợp với các class khác của boostrap button-->
+                                    <i class="fas fa-align-justify"></i> &nbsp&nbspDANH MỤC SẢN PHẨM&nbsp
+                                </button>
+                                <div class="dropdown-menu " aria-labelledby="dropdownMenu2">
+                                    <!--dropdown-menu dùng để gom các button lại thành một danh mục và ẩn nó đi kết hợp vs css dropdown-menu ở trên để khi hover tới thì nó hiện ra dưới dạng block-->
+                                    <button class="dropdown-item" type="button">
+                                        <!--dropdown-item" dùng để gom nội dung của button và icon trên button đó làm một-->
+                                        <i class="fas fa-laptop"></i> Thiết bị điện tử
+                                        <div class="dropdown-content">
+                                            <!--dropdown-content dùng để tạo menu chi tiết kế bên menu danh mục khi hover đến 1 nhóm hàng trong menu danh mục có kết hợp css trêm-->
+                                            <table>
+                                                <tr>
+                                                    <td><a href="List.html?id=1"><b> Máy tính bảng </b></a></td>
+                                                    <td><a href="List.html?id=0"><b>Điện thoại thông minh</b></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Apple Ipad </td>
+                                                    <td> Iphone </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Xiaomi Mipad  </td>
+                                                    <td> Samsung </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>  Galaxy Tab </td>
+                                                    <td> Xiaomi </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </button>
+                                    <button class="dropdown-item" type="button">
+                                        <i class="fas fa-headphones"></i> Phụ kiện-Côngnghệ số
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td><a href="List.html?id=2"><b> Sạc dự phòng </b></a></td>
+                                                    <td><a href="List.html?id=3"><b>Tai nghe</b></a></td>
+                                                    <td><a href="List.html?id=4"><b>Loa</b></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sạc dự phòng tích hợp cộng USB </td>
+                                                    <td> Tai nghe nhét sony </td>
+                                                    <td> Loa vi tính Microtek MT </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sạc dự phòng Xiaomi </td>
+                                                    <td> Tai nghe chụp Sony </td>
+                                                    <td> Bộ ba loa máy tính USB D205 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sạc dự phòng tích hợp kh6ng dây </td>
+                                                    <td>  Tai nghe blutooth nhét tai Sony </td>
+                                                    <td>  Loa blutooth Mini Speaker B2  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sạc dự phòng Xiaomi Gen 2S  </td>
+                                                    <td> Tai nghe SamSung AKG </td>
+                                                    <td> Loa blutooth P88/P89 </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </button>
+                                    <button class="dropdown-item" type="button">
+                                        <i class="fa fa-coffee"></i> Hàng tiêu dùng-Thực phẩm
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td><a href="List.html?id=6"><b>Đồ uống giải khát </b></a></td>
+                                                    <td><a href="List.html?id=5"><b>Bánh kẹo</b></a></td>
+                                                    <td><a href="List.html?id=7"><b>Chăm sóc thú cưng</b></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Bia </td>
+                                                    <td> Bánh </td>
+                                                    <td> Chó </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Đồ uống có ga </td>
+                                                    <td> Kẹo </td>
+                                                    <td> Mèo </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>  </td>
+                                                    <td> Socola </td>
+                                                    <td>  </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </button>
+                                    <button class="dropdown-item" type="button">
+                                        <i class="fa fa-child"></i> Làm đẹp-Sứckhỏe
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td><a href="List.html?id=8"><b> Son môi</b></a></td>
+                                                    <td><a href="List.html?id=9"><b>Phấn mắt</b></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Innisfree </td>
+                                                    <td> Bbia </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> L'Oreal </td>
+                                                    <td> Vacosi </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> M.A.C </td>
+                                                    <td> Zureo </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Maybelline </td>
+                                                    <td> Missha </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Silkygirl </td>
+                                                    <td> Australis </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Bbia </td>
+                                                    <td> &nbsp </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </button>
+                                    <button class="dropdown-item" type="button">
+                                        <i class="fa fa-book"></i> Sách
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td><a href="List.html?id=10"><b> Sách Tiếng Việt </b></a></td>
+                                                    <td><a href="List.html?id=11"><b>Sách tiếng Anh</b></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sách văn học </td>
+                                                    <td> Art & Photography </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sách kinh tế </td>
+                                                    <td> Business & Economics ></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>  Sách thiếu nhi </td>
+                                                    <td> How-to-Self-Help </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sách kĩ năng sống </td>
+                                                    <td> Dictionary </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Sách khoa học-kỹ thuật </td>
+                                                    <td> Children's Book </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item" style=" margin-left:90px">
+                            <a class="nav-link" href="#"><i class="fas fa-map" style="color:orange "></i>&nbsp;Bạn muốn giao hàng đến đâu ?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-sun" style="color:orange "></i>&nbsp;Tất cả sản phẩm 100% chính hiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-history" style="color:orange "></i>&nbsp;30 ngày đổi trả dễ dàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-bus" style="color:orange "></i> &nbsp;Giao cực nhanh</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-calculator" style="color:orange "></i> &nbsp;Thanh toán dễ dàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+
+    <div style="width :100%; height :1000px">
+        <!--container_fluid là lưới trong boostrap để căn chỉnh nội dung trang phù hợp với màn hình như padding margin-->
+        <div class="container-fluid " style=" width :25%;float:left" id="color">
+            <div class="row">
+                <!-- row dùng để khai báo cho các cột khi dùng class .col thành một dòng-->
+                <div class="col-md-12 ">
+                    <div class=" card">
+                        <!-- chứa và tự động căn chỉnh nội dung của Danh mục sản phẩm-->
+                        <p>
+                            <b>DANH MỤC SẢN PHẨM</b><br />
+                            <a class=" a" href=" #"><b> {{DanhMucs.Loaidm}}</b></a>
+                            <ul style=" list-style-type :none ">
+                                <li>
+                                    <a class="a" href=" #">{{DanhMucs.Loai}}</a>
+                                    <ul style=" list-style-type :none ">
+                                        <li><a class="a" href="./Detail.html?id={{DanhMucs.sp1.Id1}}">{{DanhMucs.Loai1_1}}</a></li>
+                                        <li><a class="a" href="./Detail.html?id={{DanhMucs.sp2.Id1}}">{{DanhMucs.Loai1_2}}</a></li>
+                                        <li><a class="a" href="./Detail.html?id={{DanhMucs.sp3.Id1}}">{{DanhMucs.Loai1_3}}</a></li>
+                                        <li><a class="a" href="./Detail.html?id={{DanhMucs.sp4.Id1}}">{{DanhMucs.Loai1_4}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #">SẢN PHẨM ĐƯỢC GIAO TỪ</a><br />
+                            <a class="a" href=" #">{{DanhMucs.TrongNuoc}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.NuocNgoai}}</a>
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #"> ĐÁNH GIÁ</a><br />
+                        <p>
+                            <span class="fas fa-star checked"> </span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 4 sao)
+                        </p>
+                        <p>
+                            <span class="fas fa-star checked"> </span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star  "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 3 sao)
+                        </p>
+                        <p>
+                            <span class="fas fa-star checked"> </span>
+                            <span class="fas fa-star checked "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 2 sao)
+                        </p>
+                        <p>
+                            <span class="fas fa-star checked  "> </span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star "></span>
+                            <span class="fas fa-star"></span>
+                            (Ít nhất 1 sao)
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #">{{DanhMucs.ThuongHieu}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.ThuongHieu1}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.ThuongHieu2}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.ThuongHieu3}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.ThuongHieu4}}</a><br />
+                        </p>
+                        <hr />
+                        <p>
+                            <a class="a" href=" #">{{DanhMucs.XXThuongHieu}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.XXThuongHieu1}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.XXThuongHieu2}}</a><br />
+                            <a class="a" href=" #">{{DanhMucs.XXThuongHieu3}}</a><br />
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid " style=" width :75%;float:right;font-family :'Times New Roman'  ">
+            <div class="row ">
+                <!-- gom các khung card điện thoại thành một hàng-->
+
+                <div class="col-3 padding-0 ">
+                    <!-- col-3 dùng để gộp 3 cột của 12 cột được chia trong container-fluid thành 1 cột -->
+                    <a href="./Detail.html?id={{DanhMucs.sp1.Id1}}">
+                        <div class="card " style="height:410px;">
+
+                            <img class="card-img-top" ng-src="{{DanhMucs.sp1.Image1}}" />
+                            <div class="card-body">
+                                <p class="card-title">{{DanhMucs.sp1.Ten1}} </p>
+                                <span class="card-text">
+                                    <!-- card-text dùng căn chỉnh nội dung chữ trong khung card-->
+                                    <span style=" color :red ">{{DanhMucs.sp1.Gia1}}<sup>₫</sup></span><span>&nbsp; {{DanhMucs.sp1.TietKiem1}}</span><br />
+                                    <span><del>{{DanhMucs.sp1.GiaThiTruong1}}<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star"></span>
+                                        {{DanhMucs.sp1.NhanXet1}}
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-3 padding-0">
+                    <a href="./Detail.html?id={{DanhMucs.sp2.Id1}}">
+                        <div class="card " style="height:410px;">
+                            <img class="card-img-top" ng-src="{{DanhMucs.sp2.Image1}}">
+                            <div class="card-body">
+                                <p class="card-title">
+                                    {{DanhMucs.sp2.Ten1}}
+                                </p>
+                                <span class="card-text">
+                                    <span style=" color :red ">{{DanhMucs.sp2.Gia1}}<sup>₫</sup></span><span>&nbsp; {{DanhMucs.sp2.TietKiem1}}</span><br />
+                                    <span><del>{{DanhMucs.sp2.GiaThiTruong1}}<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star  "></span>
+                                        <span class="fas fa-star"></span>
+                                        {{DanhMucs.sp2.NhanXet1}}
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-3 padding-0">
+                    <a href="./Detail.html?id={{DanhMucs.sp3.Id1}}">
+                        <div class="card " style="height:410px">
+                            <img class="card-img-top" ng-src="{{DanhMucs.sp3.Image1}}" />
+                            <div class="card-body">
+                                <p class="card-title" id="">
+                                    {{DanhMucs.sp3.Ten1}}
+                                </p>
+                                <span class="card-text">
+                                    <span style=" color :red ">{{DanhMucs.sp3.Gia1}}<sup>₫</sup></span><span>&nbsp; {{DanhMucs.sp3.TietKiem1}}</span><br />
+                                    <span><del>{{DanhMucs.sp3.GiaThiTruong1}}<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        {{DanhMucs.sp3.NhanXet1}}
+                                    </span>
+                                </span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-3 padding-0">
+                    <a href="./Detail.html?id={{DanhMucs.sp4.Id1}}">
+                        <div class="card padding-0" style="height:410px">
+                            <img class="card-img-top" ng-src="{{DanhMucs.sp4.Image1}}">
+                            <div class="card-body">
+                                <p class="card-title a">
+                                    {{DanhMucs.sp4.Ten1}}
+                                </p>
+                                <span class="card-text">
+                                    <span style=" color :red "> {{DanhMucs.sp4.Gia1}}<sup>₫</sup></span><span>&nbsp; {{DanhMucs.sp4.TietKiem1}}</span><br />
+                                    <span><del>{{DanhMucs.sp4.GiaThiTruong1}}<sup>₫</sup></del></span><br />
+                                    <span style=" font-size :14px">
+                                        <span class="fas fa-star checked  "> </span>
+                                        <span class="fas fa-star checked  "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        <span class="fas fa-star checked "></span>
+                                        {{DanhMucs.sp4.NhanXet1}}
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br style="clear:both" />
+    <!--footer-->
+
+    <div style="width:100%; height :200px">
+        <div style="width:50%; float:left; margin-left:10% ">
+            <table>
+                <tr>
+                    <td>  <img src="./Images/bantin.jpg" style="width:170px; height:120px; float:left " /></td>
+                    <td> Đăng kí nhận bản tin Semis<br />Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn</td>
+                </tr>
+            </table>
+        </div>
+        <div style="width:40%;float:right; margin-top:50px ">
+            <input type="text" class="form-control" style="width:60%; float:left " placeholder="Địa chỉ email của bạn">&nbsp;
+            <button type="button" class="btn btn-danger">Đăng kí</button>
+        </div>
+    </div>
+    <div style="width:100%; height :400px">
+        <div style="width :22%; float:left; margin-left:2%">
+            <p><b>HỖ TRỢ KHÁCH HÀNG</b></p>
+            <span style="color:palevioletred">Hotline đặt hàng:1800-6963</span><br /><span style="font-size:15px">(Miễn phí, 8-21h kể cả T7, CN)</span><br />
+            <span style="color:palevioletred">Hotline chăm sóc khách hàng: 1900-6035</span><br /><span style="font-size:15px">(1000đ/phút, 8-21h kể cả T7, CN)</span><br />
+            <span style=" font-size:15px">
+                <a href="#" class="a">Các câu hỏi thường gặp</a><br />
+                <a href="#" class="a">Gửi yêu cầu hỗ trợ</a><br />
+                <a href="#" class="a">Hướng dẫn đặt hàng</a><br />
+                <a href="#" class="a">Phương thức vận chuyển</a><br />
+                <a href="#" class=" a">Chính sách đổi trả</a><br />
+                <a href="#" class="a">Hướng dẫn mua trả góp</a><br />
+                <a href="#" class="a">Chính sách hàng nhập khẩu</a><br />
+                Hỗ trợ khách hàng :support@semis.vn<br />
+                Báo lỗi bảo mật:security@semis.vn<br />
+            </span>
+        </div>
+        <div style="width:20%; float:left">
+            <p><b>VỀ SEMIS</b></p>
+            <span style=" font-size:15px">
+                <a href="#" class="a">Giới thiệu Semis</a><br />
+                <a href="#" class="a">Tuyển dụng</a><br />
+                <a href="#" class="a">Chính sách bảo mật thanh toán</a><br />
+                <a href="#" class="a">Chính sách bảo mật thông tin cái nhân</a><br />
+                <a href="#" class="a">Chính sách giải quyết khiếu nại</a><br />
+                <a href="#" class="a">Điều khoản sử dụng</a><br />
+                <a href="#" class="a">Hội sách online</a><br />
+                <a href="#" class="a">Semis tư vấn</a><br />
+                <a href="#" class="a">Bán hàng doanh nghiệp</a><br />
+            </span>
+        </div>
+        <div style="width :20%; float:left ">
+            <p><b>HƠP TÁC VÀ LIÊN KẾT</b></p>
+            <span style="font-size:15px">
+                <a href="#" class="a">Quy chế hoạt động Sàn GDTMĐT</a><br />
+                <a href="#" class="a">Bán hàng cùng Semis</a><br />
+            </span>
+        </div>
+        <div style="width :18%; float:left ">
+            <p><b>PHƯƠNG THỨC THANH TOÁN</b></p>
+            <div class="row padding">
+                <div class="col-md-4">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" style="width:70px; height:40px" src="./Images/visa1.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="./Images/2hinhtron.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="./Images/UB.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:10px">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="./Images/cash.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:10px">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="./Images/internetbanking.PNG" />
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top:10px">
+                    <div class="card" style="border :none ">
+                        <img class="card-img-top" src="./Images/tragop.PNG" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="width:15%;float :left " align="center">
+            <p><b>KẾT NỐI VỚI CHÚNG TÔI</b></p>
+            <a href="#"><img src="./Images/face.PNG" /></a>
+            <a href="#"><img src="./Images/you.PNG" /></a>
+        </div>
+    </div>
+    <hr />
+    <div style="margin-left:10%; margin-right:10%; font-size:15px; height:130px">
+        <div style="width:45%; float:left; margin-right:5% ">
+            Địa chỉ văn phòng: 52 Út Tịch, phường 4, quận Tân Bình, thành phố Hồ Chí Minh<br />
+            Semis nhận đặt hàng trực tuyến và giao hàng tận nơi, chưa hỗ trợ mua và nhận hàng trực tiếp tại văn phòng hoặc trung tâm xử lý đơn hàng
+        </div>
+        <div style="width:45%; float:right; margin-left:5% ">
+            Địa chỉ gửi hàng đổi/trả/bảo hành: Trung tâm xử lý đơn hàng SEMIS - 367/F370 khu A75 Bạch Đằng, P.2, Q.Tân Bình, TP. Hồ Chí Minh<br />
+
+            (Tham khảo <a href="#" class="a1">hướng dẫn đổi, trả, bảo hành</a> hoặc liên hệ 1900-6035 để được hướng dẫn thêm)
+        </div>
+    </div>
+
+    <div style="width:100%; font-size:15px">
+        <div style="width:40%; margin-left:5%; float:left ">
+            &#169;<span><b>2019 - Bản quyền của Công Ty Cổ Phần SEMIS - Semis.vn</b></span><br />
+            <span>
+                Giấy chứng nhận Đăng ký Kinh doanh số 0309532909 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày 06/01/2010
+            </span>
+        </div>
+        <div style="width:20%; float :right ">
+            <a href="#"><img src="./Images/bocongthuong.PNG" /></a>
+            <a href="#"><img src="./Images/bocongthuong2.PNG" /></a>
+            <a href="#"><img src="./Images/bocongthuong3.PNG" /></a>
+        </div>
+
+    </div>
+
+    <div class="modal fade popup " id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="./SignInnew.html" target="Upload" style="text-decoration:none">Đăng nhập &nbsp; &nbsp; &nbsp;</a>
+                    <a href="./SignUpnew.html" target="Upload" style="text-decoration:none">Tạo tài khoản</a>
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class=" modal-content">
+                    <div class="Upload" id="Load">
+                        <iframe id="myFrame" name="Upload" src="./SignInnew.html" style="border:1px solid;border-bottom:none;border-left:none;border-right:none;border-color:#bab2b2"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

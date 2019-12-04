@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>New</title>
+    <!-- Import Boostrap css, js, font awesome here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        .input {
+            width: 50%;
+            border-bottom-left-radius: 3px;
+            border-top-left-radius: 3px;
+            border: 1px solid;
+            border-right: #bab2b2;
+            border-color: #bab2b2;
+            height: 40px
+        }
+
+        .select {
+            width: 50%;
+            height: 40px;
+            border: 1px solid;
+            border-color: #bab2b2;
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .MaXatThuc {
+            width: 70%;
+            border-bottom-left-radius: 3px;
+            border-top-left-radius: 3px;
+            border: 1px solid;
+            border-right: #bab2b2;
+            border-color: #bab2b2;
+            height: 40px;
+        }
+
+        .GuiMaXatThuc {
+            height: 40px;
+            background-color: #ffd800;
+            border: 1px solid;
+            border-left: none;
+            border-color: #bab2b2;
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+            .GuiMaXatThuc:hover {
+                background-color: #d3b40c
+            }
+    </style>
+    <script type="text/javascript">
+        function LoadDate() {
+            for (var i = 1; i <= 31; i++) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(i);
+                para.appendChild(node);
+                var element = document.getElementById("day");
+                element.appendChild(para);
+            }
+            for (var i = 1; i <= 12; i++) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(i);
+                para.appendChild(node);
+                var element = document.getElementById("month");
+                element.appendChild(para);
+            }
+            for (var i = 2019; i >= 1900; i--) {
+                var para = document.createElement("option");
+                var node = document.createTextNode(i);
+                para.appendChild(node);
+                var element = document.getElementById("year");
+                element.appendChild(para);
+            }
+        }
+    </script>
+</head>
+<body onload="LoadDate()" style="font-family:'Times New Roman'">
+    <div class="container">
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Họ và tên:</label>
+                <div class="col-sm-10">
+                    <input type="te" class="form-control" id="HoVaTen" placeholder="Nhập họ và tên">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="SDT">SDT:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="SDT" placeholder="Nhập số điện thoại">
+                </div>
+            </div>
+            <div class=" form-group">
+                <label class="control-label col-sm-2 " for="code">Mã xác thực:</label>
+                
+                <div class="input-group col-sm-10">
+                    <input class="MaXatThuc" type="text" placeholder="Nhập mã xát thực gửi từ số điện thoại"  />
+                    <input type="button" class="GuiMaXatThuc"  value="Gửi mã xát thực" />
+                </div>
+            </div>
+            <!--<button class="btn btn-warning" style=" width :19.7%;height :40px;border:1px solid;border-left:none;border-color:#bab2b2;border-bottom-right-radius:3px;border-top-right-radius:3px">Gửi mã xát nhận</button>-->
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Email:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="pwd" placeholder="Điền Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Mật khẩu:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu từ 6 đến 32 ký tự">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Giới tính:</label>
+                <div class="col-sm-10">
+                    <div class="form-check-inline">
+                        <label class="form-check-label" for="radio1">
+                            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Nam
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label" for="radio2">
+                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Nữ
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="height:43px">
+                    <label class="col-sm-2">Ngày sinh:</label>
+                    <!--<div class="form-group" style="float:right;border:1px solid;height:150px;width:60%;margin-right:10%">-->
+                    <div class="col-sm-10">
+                        <div style="float:right;width:100%;height:43px;margin-left:30%">
+
+                            <div class="input-group" style="float:left;width:28%">
+                                <input class="input" type="text" placeholder="Ngày"  />
+                                <select class="select" id="day" ></select>
+                            </div>
+                            <div class="input-group" style="width:28%;float:left;margin-left:9%">
+                                <input class="input" type="text" placeholder="Tháng"  />
+                                <select class="select" id="month" ></select>
+                            </div>
+                            <div class="input-group" style="float:right;width:28%">
+                                <input class="input" type="text" placeholder="Năm" />
+                                <select class="select" id="year" ></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <dic class="col-sm-2">
+                    <div class="col-sm-10">
+                        <div class="form-check-inline" >
+                            <label class="form-check-label" for="checked">
+                                <input type="checkbox" class="form-check-input" id="checked1" name="optchecked" value="option1">Nhận các thông tin và chương trình khuyến mãi của SEMIS qua email.
+                            </label>
+                        </div>
+                    </div>
+                </dic>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-warning" style="width:100%"> Tạo tài khoản</button>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

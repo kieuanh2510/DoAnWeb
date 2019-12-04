@@ -1,0 +1,359 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37905169-91B1-4AB5-9CAD-CF55A1107D50}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DoAn</RootNamespace>
+    <AssemblyName>DoAn</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bootstrap\CSS\bootstrap-grid.css" />
+    <Content Include="Bootstrap\CSS\bootstrap-grid.min.css" />
+    <Content Include="Bootstrap\CSS\bootstrap-reboot.css" />
+    <Content Include="Bootstrap\CSS\bootstrap-reboot.min.css" />
+    <Content Include="Bootstrap\CSS\bootstrap.css" />
+    <Content Include="Bootstrap\CSS\bootstrap.min.css" />
+    <Content Include="Bootstrap\JS\bootstrap.bundle.js" />
+    <Content Include="Bootstrap\JS\bootstrap.bundle.min.js" />
+    <Content Include="Bootstrap\JS\bootstrap.js" />
+    <Content Include="Bootstrap\JS\bootstrap.min.js" />
+    <Content Include="DoAn\CSS\DetailCSS.css" />
+    <Content Include="DoAn\CSS\HomePage.CSS" />
+    <Content Include="DoAn\Detail.html" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\BanhGaoNhatIchi.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\BanhPia.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\BanhPia1.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\BanhPia2.jpeg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\BanhPia3.jpeg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\KeoHursey1.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\KeoHurSey2.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\KeoHurSey3.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\keoHurSey4.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\KeoKitKat.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\Keokitkat02.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\keoKitKat3.jpg" />
+    <Content Include="DoAn\HangTieuDung\BanhKeo\ImagesBanhKeo\keoKitKat4.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\Cat.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\Chuong.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\Chuong2.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\Chuong3.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\Chuong4.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\gangtay1.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\gangtay2.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\gangtay3.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\TOY1.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\TOY2.jpg" />
+    <Content Include="DoAn\HangTieuDung\ChamSocThuCung\ImagesChamSocThuCung\TOY3.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\BiaBut.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\BiaBut2.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\BiaBut3.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\Marinda.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\Marinda1.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\Monster.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\StrongBow.jpg" />
+    <Content Include="DoAn\HangTieuDung\DoUongGiaiKhat\ImagesDoUongGiaiKhat\StrongBow2.jpg" />
+    <Content Include="DoAn\HomePage.html" />
+    <Content Include="DoAn\ImageHomepage\1.1.jpg" />
+    <Content Include="DoAn\ImageHomepage\1.2.jpg" />
+    <Content Include="DoAn\ImageHomepage\1.3.jpg" />
+    <Content Include="DoAn\ImageHomepage\1.jpg" />
+    <Content Include="DoAn\ImageHomepage\2.1.jpg" />
+    <Content Include="DoAn\ImageHomepage\2.2.jpg" />
+    <Content Include="DoAn\ImageHomepage\2.3.jpg" />
+    <Content Include="DoAn\ImageHomepage\2.jpg" />
+    <Content Include="DoAn\ImageHomepage\3.1.jpg" />
+    <Content Include="DoAn\ImageHomepage\3.2.jpg" />
+    <Content Include="DoAn\ImageHomepage\3.3.jpg" />
+    <Content Include="DoAn\ImageHomepage\3.jpg" />
+    <Content Include="DoAn\ImageHomepage\5afd91b0894ecf5c8c064534252e213b.jpg" />
+    <Content Include="DoAn\ImageHomepage\644d6b82e4ce860960d18bfeab461292.png" />
+    <Content Include="DoAn\ImageHomepage\72747530_2761407493957804_4127823008679067648_n.jpg" />
+    <Content Include="DoAn\ImageHomepage\9adf95080ad0e28af257fd924b11caac.png" />
+    <Content Include="DoAn\ImageHomepage\d9c38d917f22b736ba48342a7880c201.png" />
+    <Content Include="DoAn\ImageHomepage\da8f5420c7c4d4f1b646ad421fe9fd59.png" />
+    <Content Include="DoAn\ImageHomepage\e76e5469baa1665312a19cd0e6b21a6b.png" />
+    <Content Include="DoAn\ImageHomepage\ee4b0f6bd5386ddafbddb4c38eabe4ec.png" />
+    <Content Include="DoAn\ImageHomepage\QC1.png" />
+    <Content Include="DoAn\ImageHomepage\QC2.png" />
+    <Content Include="DoAn\ImageHomepage\QC3.png" />
+    <Content Include="DoAn\ImageHomepage\QC4.png" />
+    <Content Include="DoAn\ImageHomepage\QC5.png" />
+    <Content Include="DoAn\ImageHomepage\QC6.png" />
+    <Content Include="DoAn\Images\2hinhtron.PNG" />
+    <Content Include="DoAn\Images\bantin.jpg" />
+    <Content Include="DoAn\Images\bocongthuong.PNG" />
+    <Content Include="DoAn\Images\bocongthuong2.PNG" />
+    <Content Include="DoAn\Images\bocongthuong3.PNG" />
+    <Content Include="DoAn\Images\cash.PNG" />
+    <Content Include="DoAn\Images\face.PNG" />
+    <Content Include="DoAn\Images\internetbanking.PNG" />
+    <Content Include="DoAn\Images\tragop.PNG" />
+    <Content Include="DoAn\Images\UB.PNG" />
+    <Content Include="DoAn\Images\visa1.PNG" />
+    <Content Include="DoAn\Images\you.PNG" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\1.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\2.1.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\2.2.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\2.3.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\2.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\3.1.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\3.2.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\3.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\4.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\5.1.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\5.2.jpg" />
+    <Content Include="DoAn\LamDep\Phan\ImagesPhan\5.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\1.1.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\1.2.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\1.3.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\1.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\3.1.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\3.2.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\3.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\4.1.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\4.2.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\4.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\5.1.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\5.2.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\5.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\6.1.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\6.2.jpg" />
+    <Content Include="DoAn\LamDep\Son\ImagesSon\6.jpg" />
+    <Content Include="DoAn\List.html" />
+    <Content Include="DoAn\Logo.JPG" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\1.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\1.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\1.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\1.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\2.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\2.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\2.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\2.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\3.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\3.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\3.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\3.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\4.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\4.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\4.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\DienThoai\ImagesDienThoai\4.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\1.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\1.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\1.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\1.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\2.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\2.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\2.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\2.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\3.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\3.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\3.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\3.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\4.1.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\4.2.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\4.3.jpg" />
+    <Content Include="DoAn\MayTinhBang\MayTinhBang\ImagesMayTinhBang\4.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa1.1.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa1.2.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa1.3.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa1.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa2.1.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa2.2.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa2.3.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa2.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa3.1.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa3.2.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa3.3.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa3.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa4.1.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa4.2.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa4.3.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\ImagesLoa\loa4.jpg" />
+    <Content Include="DoAn\PhuKien\Loa\PageLoa.html" />
+    <Content Include="DoAn\PhuKien\PagePhuKien.html" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin1.1.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\Pin1.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin2.1.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin2.2.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin2.3.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin2.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin3.1.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin3.2.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin3.3.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin3.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin4.1.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin4.2.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin4.3.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\ImagesPin\pin4.jpg" />
+    <Content Include="DoAn\PhuKien\PinSac\PagePin.html" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe1.1.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe1.2.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe1.3.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\Tainghe1.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe2.1.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe2.2.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe2.3.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe2.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe3.jpg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\ImagesTaiNghe\tainghe4.jpeg" />
+    <Content Include="DoAn\PhuKien\TaiNghe\PageTaiNghe.html" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\1.1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\1.2.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\1.3.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\1.4.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\1.5.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\2.png" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\4.1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\4.2.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\4.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\5.1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\5.jpg" />
+    <Content Include="DoAn\Sach\SachTiengAnh\ImagesSachTiengAnh\3.gif" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\1.1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\1.2.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\2.1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\2.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\3.1.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\3.2.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\3.3.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\3.4.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\3.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\4.jpg" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\5.1.gif" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\5.2.gif" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\5.3.gif" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\5.4.gif" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\5.5.gif" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\5.6.gif" />
+    <Content Include="DoAn\Sach\SachTiengViet\ImagesSachTiengViet\5.gif" />
+    <Content Include="DoAn\SignInnew.html" />
+    <Content Include="DoAn\SignUpnew.html" />
+    <Content Include="Script\Angular.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bootstrap\CSS\bootstrap-grid.css.map" />
+    <Content Include="Bootstrap\CSS\bootstrap-grid.min.css.map" />
+    <Content Include="Bootstrap\CSS\bootstrap-reboot.css.map" />
+    <Content Include="Bootstrap\CSS\bootstrap-reboot.min.css.map" />
+    <Content Include="Bootstrap\CSS\bootstrap.css.map" />
+    <Content Include="Bootstrap\CSS\bootstrap.min.css.map" />
+    <Content Include="Bootstrap\JS\bootstrap.bundle.js.map" />
+    <Content Include="Bootstrap\JS\bootstrap.bundle.min.js.map" />
+    <Content Include="Bootstrap\JS\bootstrap.js.map" />
+    <Content Include="Bootstrap\JS\bootstrap.min.js.map" />
+    <Content Include="DoAn\ChiTietSanPham.json" />
+    <Content Include="DoAn\DanhMucSanPham.json" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55990</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55990/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

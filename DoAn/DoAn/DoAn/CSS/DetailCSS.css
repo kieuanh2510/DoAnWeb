@@ -1,0 +1,234 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+}
+
+
+.left {
+    float: left;
+    width: 40%;
+    margin-top: 3px;
+}
+
+.right {
+    float: right;
+    width: 59%;
+    margin-top: 3px;
+    border-left: 1px solid gainsboro;
+}
+
+.RightHead {
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    font-family: 'Times New Roman';
+}
+
+.right1 {
+    width: 30%;
+    height: auto;
+    float: right;
+    font-family: 'Times New Roman';
+    padding: 10px;
+}
+
+.right2 {
+    width: 68%;
+    height: auto;
+    float: left;
+    padding: 10px 20px;
+    font-family: 'Times New Roman';
+}
+
+.colorlist ul {
+    list-style: none;
+}
+
+    .colorlist ul li::before {
+        content: "\2022";
+        color: gray;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+.left1 {
+    width: 70%;
+    height: auto;
+    float: right;
+    margin-top: 60px;
+}
+
+.left2 {
+    width: 29%;
+    height: auto;
+    float: left;
+}
+
+.HinhNho {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.checked {
+    color: #ffcc00;
+}
+
+.heart i:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.shoppingcart button:hover {
+    opacity: 0.72;
+    cursor: pointer;
+}
+
+.seemore label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.full {
+    width: 100%;
+    height: auto;
+}
+
+#more {
+    display: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+    text-decoration: none
+}
+
+.checked1 {
+    color: #ffcc00;
+}
+
+.checked {
+    color: lightgray;
+}
+
+.checked2 {
+    color: black;
+}
+
+carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+
+.carousel-control-prev {
+    left: -20px;
+    height: 40px;
+    width: 40px;
+    background: none repeat scroll 0 0 #222222;
+    border: 2px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    margin-top: 100px;
+}
+
+.carousel-control-next {
+    right: -15px;
+    height: 40px;
+    width: 40px;
+    background: none repeat scroll 0 0 #222222;
+    border: 2px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    margin-top: 100px;
+}
+
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: -10px;
+    margin-right: -35%;
+    margin-bottom: -20px;
+}
+
+
+#paidSection {
+    display: flex;
+    visibility: collapse;
+    position: absolute;
+    z-index: 2 !important;
+    height: auto;
+    width: auto;
+    background-color: #fff;
+    top: -10px;
+    width: 300px;
+    right: 50px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    padding: 10px;
+}
+
+.primaryButton {
+    width: 250px;
+    background-color: red;
+    color: wheat;
+    border: 0px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+    .primaryButton a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+#listProduct {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.listProductItem {
+    display: flex;
+    flex-direction: row;
+}
+
+    .listProductItem img {
+        margin-right: 10px;
+        height: 40px;
+    }
+
+#countItems {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    background-color: yellow;
+    margin-left: 4px;
+}
+
+.cartProducts {
+    border: 1px solid white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
